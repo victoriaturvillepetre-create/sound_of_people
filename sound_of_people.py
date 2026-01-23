@@ -1,3 +1,8 @@
+from colorama import Fore
+
+def colour(c):
+    return getattr(Fore, c.upper(), "")
+
 class Animal:
     SOUNDS = {
         "duck": "quack",
@@ -24,7 +29,7 @@ class Animal:
 
         print(f"{self.name} is a {self.age} year old {self.colour} {self.animal}")
         for _ in range(self.age):
-            print(sound)
+            print(colour(self.colour) + sound + colour("reset"))
 
 class Aaran(Animal):
     def __init__(self, animal, age, colour):
