@@ -5,7 +5,8 @@ class Animal:
         "aaran": "kazam!",
         "martin": "brom",
         "william": "yap",
-        "maryam": "67"
+        "maryam": "67",
+        "evelyn": "yay",
     }
 
     def __init__(self, name, animal, age, colour):
@@ -41,6 +42,10 @@ class Maryam(Animal):
     def __init__(self, animal, age, colour):
         super().__init__("Maryam", animal, age, colour)
 
+class Evelyn(Animal):
+    def __init__(self, animal, age, colour):
+        super().__init__("Evelyn", animal, age, colour)
+
 def create_animal(cls):
     animal = input(f"What animal is {cls.__name__}? ").lower()
     age = int(input(f"How old is {cls.__name__}? "))
@@ -49,7 +54,7 @@ def create_animal(cls):
     obj = cls(animal, age, colour)
     obj.speak()
 
-people = [Aaran, Martin, William, Maryam]
+people = [Aaran, Martin, William, Maryam, Evelyn]
 
 while True:
     for person in people:
